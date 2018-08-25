@@ -1,0 +1,61 @@
+<import src="post-item/post-item-template.wxml"/>
+<view class="">
+    <swiper indicator-dots="{{indicatorDots}}"
+       autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" catchtap='onSwiperTap'>
+       <block wx:for="{{imgUrls}}">
+         <swiper-item>
+           <image src="{{item}}" class="slide-image" data-postId='{{index}}' binderror="imageError"/>
+         </swiper-item>
+       </block>
+     </swiper>
+</view>
+<!-- <view class="post-container">
+    <view class="post-author-date">
+        <image src="/images/avatar/1.png" class='post-author'></image>
+        <text class='post-date'>Nov 25 2018</text>
+    </view>
+    <text class='post-title'>正是虾肥强壮时候</text>
+    <image class='post-image' src="/images/post/crab.png"></image>
+    <text class='post-content'>橘黄蟹正肥，品尝秋之味，橘黄蟹正肥，品尝秋之味，橘黄蟹正肥，品尝秋之味，橘黄蟹正肥，品尝秋之味，橘黄蟹正肥，品尝秋之味，橘黄蟹正肥，品尝秋之味，橘黄蟹正肥，品尝秋之味，橘黄蟹正肥，品尝秋之味，橘黄蟹正肥，品尝秋之味，橘黄蟹正肥，品尝秋之味，橘黄蟹正肥，品尝秋之味，</text>
+    <view class="post-like">
+        <image src="../../images/icon/chat.png" class='post-like-image'></image>
+        <text class='post-like-font'>99</text>
+        <image src="../../images/icon/view.png" class='post-like-image'></image>
+        <text class='post-like-font'>88</text>
+    </view>
+</view> -->
+<block wx:for="{{post_key}}" wx:key="unique">
+  <!-- <view class="post-container">
+      <view class="post-author-date" >
+          <image  src="{{item.avatar}}" class='post-author'></image>
+          <text class='post-date'>{{item.date}}</text>
+      </view>
+      <text class='post-title'>{{item.title}}</text>
+      <image class='post-image' src="{{item.imgSrc}}"></image>
+      <text class='post-content'>{{item.content}}</text>
+      <view class="post-like">
+          <image src="../../images/icon/chat.png" class='post-like-image'></image>
+          <text class='post-like-font'>{{item.reading}}</text>
+          <image src="../../images/icon/view.png" class='post-like-image'></image>
+          <text class='post-like-font'>{{item.collection}}</text>
+      </view>
+  </view> -->
+  <view class="" bindtap="onPostTap" data-postId="{{item.postId}}">
+      <template  is="postItem" data="{{...item}}" />
+  </view>
+</block>
+<!-- <view class="post-container">
+    <view class="post-author-date">
+        <image src="/images/avatar/3.png" class='post-author'></image>
+        <text class='post-date'>Nov 25 2018</text>
+    </view>
+    <text class='post-title'>正是虾肥强壮时候</text>
+    <image class='post-image' src="/images/post/bl.png"></image>
+    <text class='post-content'>橘黄蟹正肥，品尝秋之味，橘黄蟹正肥，品尝秋之味，橘黄蟹正肥，品尝秋之味，橘黄蟹正肥，品尝秋之味，橘黄蟹正肥，品尝秋之味，橘黄蟹正肥，品尝秋之味，橘黄蟹正肥，品尝秋之味，橘黄蟹正肥，品尝秋之味，橘黄蟹正肥，品尝秋之味，橘黄蟹正肥，品尝秋之味，橘黄蟹正肥，品尝秋之味，</text>
+    <view class="post-like">
+        <image src="../../images/icon/chat.png" class='post-like-image'></image>
+        <text class='post-like-font'>99</text>
+        <image src="../../images/icon/view.png" class='post-like-image'></image>
+        <text class='post-like-font'>88</text>
+    </view>
+</view> -->
